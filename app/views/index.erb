@@ -10,19 +10,65 @@
         <h1>Stats</h1>
         <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" >Average Comedian Age: <%= Comedian.average_age %> <span class="sr-only">(current)</span></a>
+      </li>
+      <a class="nav-link" >Hometowns: <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <h9 class="nav-link" >
+          <% places = [] %>
+          <% @comedians.select(:birthplace).uniq.each do |comedian| %>
+          <% if places.include?(comedian.birthplace) == false %>
+
+           <%= comedian.birthplace %> -
+           <% places << comedian.birthplace %>
+
+       <% end %>
+     <% end %>
+       </h9>
       </li>
       <li class="nav-item">
-        <h9 class="nav-link" >Features</h9>
-      </li>
-      <li class="nav-item">
-        <h9 class="nav-link">Pricing</h9>
+        <h9 class="nav-link"></h9>
       </li>
     </ul>
     </section>
 
-    <p> <% @sum = 0 %>
-          <% @comedians.each do |comedian| %> </p>
+      <ul>
+  <% @comedians.each do |comedian|%>
+    <li>
+      <img src = <%= comedian.image_url %>>
+      <ul>
+        <li>
+          <%= comedian.name %>
+          <%= comedian.id %>
+        </li>
+        <li>
+          <%= comedian.age %>
+        </li>
+        <li>
+          <%= comedian.birthplace %>
+        </li>
+        <li>
+          Specials:
+        </li>
+      </ul>
+
+      <% comedian.specials.each do |special| %>
+        <ul>
+          <li>
+            Special: <%= special.title %>
+          </li>
+          <li>
+            Duration: <%= special.duration_mins %>
+          </li>
+        </ul>
+      <% end %>
+    </li>
+  <% end %>
+
+</ul>
+
+
+
 
 
 

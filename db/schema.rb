@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_03_17_213458) do
 
   create_table "comedians", force: :cascade do |t|
     t.text "name"
+    t.integer "comedian_id"
     t.integer "age"
     t.text "birthplace"
     t.text "image_url"

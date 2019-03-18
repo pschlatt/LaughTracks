@@ -1,3 +1,5 @@
+
+
 class Comedian < ActiveRecord::Base
   has_many :specials
   validates_presence_of :name,
@@ -6,6 +8,10 @@ class Comedian < ActiveRecord::Base
 
   def self.average_age
     average(:age).round
+  end
+
+  def self.print_name
+    puts(:name)
   end
 
 end

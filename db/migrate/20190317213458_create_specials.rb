@@ -6,7 +6,5 @@ class CreateSpecials < ActiveRecord::Migration[5.2]
       t.integer :comedian_id
       t.text :image_url
     }
-
-
   end
 end
