@@ -30,3 +30,8 @@ td {
   background-color: #FF4B4B;
   font-weight: bold;
 }
+
+.formatter {
+  height: 50%;
+  width: 50%;
+}

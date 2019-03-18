@@ -27,7 +27,7 @@
        </h9>
       </li>
       <li class="nav-item">
-        <h9 class="nav-link"></h9>
+        <h9 class="nav-link"><a href="/comedians/new">Add New Comedian</a></h9>
       </li>
     </ul>
     </section>
@@ -35,17 +35,20 @@
       <ul>
   <% @comedians.each do |comedian|%>
     <li>
-      <img src = <%= comedian.image_url %>>
+      <table>
+        <tr>
+
+      <img  src = <%= comedian.image_url %> width="30%" height="70%">
+
       <ul>
         <li>
           <%= comedian.name %>
-          <%= comedian.id %>
         </li>
         <li>
-          <%= comedian.age %>
+          Age: <%= comedian.age %>
         </li>
         <li>
-          <%= comedian.birthplace %>
+          Hometown: <%= comedian.birthplace %>
         </li>
         <li>
           Specials:
@@ -60,11 +63,15 @@
           <li>
             Duration: <%= special.duration_mins %>
           </li>
+          <li>
+              <img src = <%= special.image_url %> width="100px" height="100px">
+          </li>
         </ul>
       <% end %>
     </li>
   <% end %>
-
+  </tr>
+</table>
 </ul>
 
 
